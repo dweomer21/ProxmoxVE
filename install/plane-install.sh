@@ -176,7 +176,7 @@ $STD /opt/plane-venv/bin/python manage.py register_instance "${MACHINE_SIG}"
 msg_ok "Ran Database Migrations"
 
 msg_info "Creating Services and MinIO Bucket"
-curl -fsSL https://dl.min.io/client/mc/release/linux-$(arch_resolve)/mc -o /usr/local/bin/mcli
+curl -fsSL https://dl.min.io/aistor/mc/release/linux-$(arch_resolve)/mc -o /usr/local/bin/mcli
 chmod +x /usr/local/bin/mcli
 $STD /usr/local/bin/mcli alias set plane http://localhost:9000 "${MINIO_ACCESS_KEY}" "${MINIO_SECRET_KEY}"
 $STD /usr/local/bin/mcli mb plane/uploads --ignore-existing
